@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "checkJs": true,
+    "baseUrl": "."
+  },
+  "include": [
+    "**/*.js"
+  ]
+}

@@ -1,4 +1,4 @@
-window.onload = () => render();
+window.onload = render;
 
 /**
  * @typedef {Object} Position
@@ -15,7 +15,7 @@ window.onload = () => render();
 function getUserPosition() {
   return new Promise((resolve, reject) => {
     if (!("geolocation" in navigator)) {
-      reject("Browser does not support the Geolocation API.");
+      reject("Browser does not support the Geolocation API");
     }
 
     navigator.geolocation.getCurrentPosition((position) => {
@@ -32,6 +32,7 @@ function render() {
 
   getUserPosition().then((position) => {
     const entity = document.createElement("a-entity");
+    console.log(`Placing entity at latitude ${position.latitude} and longitude ${position.longitude}`);
 
     entity.setAttribute(
       "gps-entity-place",

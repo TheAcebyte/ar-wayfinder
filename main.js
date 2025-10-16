@@ -32,11 +32,10 @@ function render() {
 
   getUserPosition().then((position) => {
     const entity = document.createElement("a-entity");
-    console.log(`Placing entity at latitude ${position.latitude} and longitude ${position.longitude}`);
 
     entity.setAttribute(
       "gps-entity-place",
-      `latitude: ${position.latitude}; longitude: ${position.longitude};`,
+      `latitude: ${position.latitude + 0.000068}; longitude: ${position.longitude - 0.000058};`,
     );
     entity.setAttribute("gltf-model", "assets/dragonite/scene.gltf");
     entity.setAttribute("rotation", "0 180 0");
